@@ -1,10 +1,11 @@
 package dev.melissa.tests;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import dev.melissa.pages.LoginPage;
 
 public class LoginPageTest {
         private LoginPage loginPage;
@@ -23,7 +24,7 @@ public class LoginPageTest {
     
         @Test
         void test() {
-            this.loginPage.signin();
+            this.loginPage.signIn();
             
             Assertions.assertTrue(this.loginPage.getAccount().equals(" Logged in as "));
             Assertions.assertFalse(this.loginPage.getCurrentUrl().equals(this.URL));

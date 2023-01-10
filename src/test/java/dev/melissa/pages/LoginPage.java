@@ -1,11 +1,15 @@
 package dev.melissa.pages;
 
+import java.security.BasicPermission;
+
+import org.openqa.selenium.By;
+
 public class LoginPage extends BasePage {
     //Locators
     private By emailAddressLocator = By.id("email");
     private By passwordLocator = By.name("password");
-    private By submitButtonLocator = By.xpath("//*[@id="form"]/div/div/div[1]/div/form/button");
-    private By AccountNameLocator = By.xpath("//*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a/i"); 
+    private By submitButtonLocator = By.cssSelector("#form > div > div > div.col-sm-4.col-sm-offset-1 > div > form > button");
+    private By AccountNameLocator = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(10) > a"); 
 
     public void signIn(){
         if(super.isDisplayed(emailAddressLocator)){

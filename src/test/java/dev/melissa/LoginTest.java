@@ -1,5 +1,16 @@
 package dev.melissa;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 class LoginTest {
 	private WebDriver driver;
 
@@ -26,10 +37,10 @@ class LoginTest {
 		passwordElement.sendKeys("senhatest");
     
 		
-		WebElement submitButtonElement = driver.findElement(By.xpath("//*[@id="form"]/div/div/div[1]/div/form/button"));
+		WebElement submitButtonElement = driver.findElement(By.cssSelector("#form > div > div > div.col-sm-4.col-sm-offset-1 > div > form > button"));
 		submitButtonElement.click();
 		
-		WebElement testCaseButton = driver.findElement(By.xpath("//*[@id="header"]/div/div/div/div[2]/div/ul/li[6]/a/i"));
+		WebElement testCaseButton = driver.findElement(By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(6) > a"));
 		String textTestCase = testCaseButton.getText();
 		
 		Assertions.assertTrue(textTestCase.equals("Test Cases"));
